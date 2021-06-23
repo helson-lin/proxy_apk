@@ -8,8 +8,8 @@ const port = process.env.PORT || 4000
 
 app.use('/', function (req, res) {
 	  const { url } = req;
+	  // replace this website url you want
 	  const urls = `https://apk.tools${url}`
-	  console.log(urls); 
 	  const html = request({url: urls, timeout: 2000},((err) => {
 		if(err) {
 		  res.status = 404;
@@ -23,7 +23,6 @@ app.use('/', function (req, res) {
 app.use('/favicon.ico', function (req, res) {
 	res.sendFile('./assets/favicon.ico')
 })
-
 app.listen(port)
 
 console.log(`app listening on  4000 port`);
